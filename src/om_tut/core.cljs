@@ -12,7 +12,7 @@
 
 (om/root
   (fn [data owner]
-    (om/component (apply dom/ul nil
+    (om/component (apply dom/ul #js {:className "animals"}
                          (map (fn [text] (dom/li nil text))
                               (:list data)))))
   app-state
