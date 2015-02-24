@@ -8,13 +8,13 @@
 
 ;; define your app data so that it doesn't get over-written on reload
 
-(defonce app-state (atom {:text "Hello world!"}))
+(defonce app-state (atom {:text "Hello, Om World!"}))
 
 (om/root
   (fn [data owner]
     (reify om/IRender
       (render [_]
-        (dom/h1 nil (:text data)))))
+        (dom/p nil (:text data)))))
   app-state
   {:target (. js/document (getElementById "app"))})
 
